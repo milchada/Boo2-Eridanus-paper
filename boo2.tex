@@ -1,0 +1,793 @@
+%\documentclass[11pt,preprint]{aastex}
+\documentclass{../tex_files/emulateapj}
+%% manuscript produces a one-column, double-spaced document:
+% \documentclass[manuscript]{aastex}
+%% preprint2 produces a double-column, single-spaced document:
+% \documentclass[preprint2]{aastex}
+%% If you want to create your own macros, you can do so
+%% using \newcommand. Your macros should appear before
+%% the \begin{document} command.
+%%
+%% If you are submitting to a journal that translates manuscripts
+%% into SGML, you need to follow certain guidelines when preparing
+%% your macros. See the AASTeX v5.x Author Guide
+%% for information.
+
+\newcommand{\kms}{\,km~s$^{-1}$}
+\def\squig{\sim\!\!}
+\newcommand{\Msun}{\mbox{\,$M_{\odot}$}}
+\newcommand{\Lsun}{\mbox{\,$L_{\odot}$}}
+
+
+\def\spose#1{\hbox to 0pt{#1\hss}}
+\def\simlt{\mathrel{\spose{\lower 3pt\hbox{$\mathchar"218$}}
+     \raise 2.0pt\hbox{$\mathchar"13C$}}}
+\def\simgt{\mathrel{\spose{\lower 3pt\hbox{$\mathchar"218$}}
+     \raise 2.0pt\hbox{$\mathchar"13E$}}}
+\font\smcap=cmcsc10
+\def\caii{Ca\,{\smcap ii}}
+
+
+%% You can insert a short comment on the title page using the command below.
+
+%\slugcomment{Draft 1/08}
+
+%% If you wish, you may supply running head information, although
+%% this information may be modified by the editorial offices.
+%% The left head contains a list of authors,
+%% usually a maximum of three (otherwise use et al.).  The right
+%% head is a modified title of up to roughly 44 characters.  Running heads
+%% will not print in the manuscript style.
+
+\shorttitle{Kinematics of Boo\,II and Eridanus}
+\shortauthors{Geha~et~al.}
+
+%% This is the end of the preamble.  Indicate the beginning of the
+%% paper itself with \begin{document}.
+
+\begin{document}
+
+%% LaTeX will automatically break titles if they run longer than
+%% one line. However, you may use \\ to force a line break if
+%% you desire.
+
+\title{Mass Estimates of an Ultra-Faint Galaxy and an Outer Halo Globular Cluster:  Bo\"otes\,II and Eridanus}
+
+%
+
+
+%% Use \author, \affil, and the \and command to format
+%% author and affiliation information.
+%% Note that \email has replaced the old \authoremail command
+%% from AASTeX v4.0. You can use \email to mark an email address
+%% anywhere in the paper, not just in the front matter.
+%% As in the title, you can use \\ to force line breaks.
+
+\author{Marla Geha\altaffilmark{1}}
+\altaffiltext{1}{Astronomy Department, Yale University, New Haven, CT~06520.  marla.geha@yale.edu}
+
+\author{Joshua\ D.\ Simon\altaffilmark{2}}
+%\altaffiltext{3}{Department of Astronomy, 
+ %%      California Institute of Technology, 1200 E. California Blvd.,
+ %      MS 105-24, Pasadena, CA  91125}
+
+
+\author{Ricardo Mu\~noz\altaffilmark{3}}
+
+\author{Evan Kirby\altaffilmark{4}}
+%\altaffiltext{5}{UCO/Lick Observatory, University of California,
+ %   Santa Cruz, 1156 High Street, Santa Cruz, CA~95064.}
+\author{other people.}
+
+
+
+%% Mark off your abstract in the ``abstract'' environment. In the manuscript
+%% style, abstract will output a Received/Accepted line after the
+%% title and affiliation information. No date will appear since the author
+%% does not have this information. The dates will be filled in by the
+%% editorial office after submission.
+
+\begin{abstract}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+We present dynamical massess and improved photometric properties 
+for the Milky Way ultra-faint galaxy Bo\"otes~II (Boo\,II) and the
+halo globular cluster Eridanus (Eri) based on Keck/DEIMOS spectroscopy
+and deep CFHT imaging.  These two objects have similar
+luminosities, but very different structure, kinematics and
+chemistries.  From 20 member stars, we estimate the velocity
+dispersion of Boo\,II to be \mbox{$\sigma = 2.0^{+1.3}_{-1.1}$\kms}.
+Based on 34 member stars in Eridanus, we can only place an upper limit
+on the velocity dispersion of \mbox{$\sigma < 0.7$\kms}.  Combining the
+photometric and kinematic observations, we infer the mass of Boo\,II
+inside the half-light radius is M$_{1/2} = 5.5^{+2.8}_{-2.8}\times
+10^5$\Msun, corresponding to a M/L$_V = 445\pm300$.  The mass of
+Eridanus is M$_{1/2} < 3.8 \times 10^3$\Msun, corresponding
+to a M/L$_{V} < 1$.  The mass-to-light ratio of Eri is
+consistent with that of a normal old stellar populations, in contrast
+to Boo\,II which is difficult to interpret without a significant dark
+matter component.  The mean metallicity of Boo~II is $<$[Fe/H]$> =
+-1.9 \pm0.2$, with an internal metallicity dispersion of 0.5\,dex.
+The mean metallicity of Eridanus is $<$[Fe/H]$> = -1.0\pm0.1$, with no
+measurable metallicity spread.  The different kinematics and chemistries
+of Boo~II and Eri are a clean demonstration that, in most cases,
+globular clusters and ultra-faint galaxies are two well separated
+classes of objects.
+
+
+
+\end{abstract}
+
+%% Keywords should appear after the \end{abstract} command. The uncommented
+%% example has been keyed in ApJ style. See the instructions to authors
+%% for the journal to which you are submitting your paper to determine
+%% what keyword punctuation is appropriate.
+
+\keywords{galaxies: dwarf ---
+          galaxies: kinematics and dynamics ---
+          galaxies: individual (Boo\,II)
+          Galaxy: globular clusters: individual (Eridanus)}
+
+
+%% From the front matter, we move on to the body of the paper.
+%% In the first two sections, notice the use of the natbib \citep
+%% and \citet commands to identify citations.  The citations are
+%% tied to the reference list via symbolic KEYs. The KEY corresponds
+%% to the KEY in the \bibitem in the reference list below. We have
+%% chosen the first three characters of the first author's name plus
+%% the last two numeral of the year of publication as our KEY for
+%% each reference.
+
+\section{Introduction}\label{intro_sec}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+
+
+The discovery of the ultra-faint satellites around the Milky Way
+\citep{2007ApJ...670..313S}, has blurred the distinction between dwarf
+galaxies and globular star clusters \citep{2012AJ....144...76W}.  This
+delineation was most obvious in the relationship between total
+luminosity and physical size: at a given total luminosity, globular
+clusters tend to be more concentrated than dwarf galaxies, with an order of
+magnitude smaller characteristic radii \citep{belokurov06a}.  Dwarf
+galaxies were further differentiated from globular clusters as having
+significant dark matter content and a substantial internal spread in
+metallicity, possibly suggesting multiple epochs of star formation.
+This is in contrast to globular clusters which shown little evidence
+for dark matter \citep{2011ApJ...743..167B}.
+
+In the few cases where the age or metallicity spread is
+substantial (Omega Cen; ), these objects are assumed to have a
+different origin than the bulk of the cluster population, such as
+remnants of tidally stripped dwarf galaxies
+
+While the above definitions still hold, the ultra-faint galaxies have
+blurred the distinction between globular clusters and dwarf galaxies.
+The ultra-faint galaxies have absolute magnitudes fainter than $M_V >
+-8$ and have only been recently discovered as resolved over-densities
+of stars.  The faintest of these discoveries have the smallest known
+sizes for any .
+
+Because the faintest galaxies can so far only be found near the Milky
+Way ($<50$\,kpc), these objects are also the most susceptible to the
+tidal forces of the Milky Way.  It has thus been suggested that the
+ultra-faint galaxies are instead globular clusters which have been
+caught in
+
+
+
+
+In this paper, we present Keck/DEIMOS spectroscopic and CFHT/MegaCam
+photometric measurements for two objects with similar luminosities:
+Bo\"otes\,II and Eridanus.  We show that the kinematic properties and
+metalicity distribution of these two objects are very different,
+consistent with the interpretation that Bo\"otes\,II is an ultra-faint
+galaxy, while Eridanus is a globular cluster.  The paper is organized as
+follows: in \S\,\ref{sec_data} we discuss target selection, data
+reduction and member selection for our Keck/DEIMOS spectroscopy.
+
+%In \S\,\ref{sec_kin} we discuss the kinematics of Segue\,1, including
+%possible foreground contamination and two methods to estimate the mass
+%of Segue\,1.  In \S\,\ref{sec_gamma} we note that Segue\,1 may be a
+%good target for indirect detection of dark matter.
+
+
+\section{Data}\label{sec_data}
+
+We present data for the Milky Way satellites Bo\"otes\,II (Boo\,II)
+and Eridanus (Eri).  Both objects have limited photometric and
+spectroscopic data in the literature.  Boo\,II was discovered by
+\citet{2007ApJ...662L..83W} in SDSS imaging, and classified as an
+ultra-faint galaxy at roughly 40\,kpc.  Eridanus was found in ESO
+Schmidt plates and subsequently classified as a globular cluster at
+roughly 90\,kpc \citep{cesarsky77}.  Both classifications are based on
+the combined photometric radius and luminosity.
+
+
+\subsection{Photometry: Structural Parameters}\label{ssec_struct}
+
+We obtained deep Canada-France-Hawaii Telescope (CFHT) MegaCam $g$-
+and $r$-band imaging of Boo\,II and Eri in April 2010 and October
+2009, respectively.  These data were taken as part of a larger
+photometric survey of Milky Way satellites (PI: Cot\'e) which will be
+described in a future paper (R.~Mu\~noz et al.~2016, in prep.).  Each
+object was observed for a total of one hour, split roughly equal
+between the two filters.  Image reduction is the same as that
+described in \citet{munoz10a}, and includes standard calibrations and
+photometry using DAOPHOT/Allframe \citep{stetson94a}.  In the case of
+Boo\,II, the photometry was calibrated against overlapping bright
+stars in the SDSS Data Release 7 \citep[][DR7]{2009ApJS..182..543A}.  Eri is not in
+the SDSS DR7 footprint and was instead calibrated against BVI standard
+field photometry in the cluster's center from P.~Stetson's online
+database\footnote{http://cadcwww.dao.nrc.ca/community/STETSON/standards/},
+and the photometric transformation of \citet{2007AJ....133..734B}.  Final
+color-magnitude diagrams are shown for each object in the left panels
+of Figures~\ref{fig_boocmd} and \ref{fig_ericmd}.
+
+Both Boo\,II and Eri are sufficiently low luminosity that even our
+deep CFHT photometry detects only a few hundred individual stars
+belonging to each object.  We therefore determine the total
+luminosity, half-light radii and ellipiticity of Boo\,II and Eri using
+the maximum likelihood methods described in \citet{munoz10a}.  This
+method is a significant improvement over traditional surface
+brightness fitting algorithms in the case of low numbers of resolved
+stars \citep{martin08a, munoz10b}.  The method relies solely on the
+total number of stars belonging to the satellite and not on their
+individual magnitudes \citep{munoz10a}.  To estimate an absolute
+magnitude, we modelled an object's population with the best-fitting
+theoretical luminosity function, in this case a $12$\,Gyr population
+with [Fe/H]$=-1.5$ \citep{girardi02a}. We then integrated the
+theoretical luminosity function assuming a Kroupa IMF to obtain the
+total flux down to a given magnitude limit.
+
+% WALSH 2007: 60+/-10 kpc
+% WALSH 2008:  42+/-2 kpc,  rh_plummer=36+/-9 MV~=-2.4+/-0.7 
+% MARTIN:  MV = -2.7 +/- 0.9,  rh = 4.2 +/- 1.1', 51 􏰁 rh = 51 +/- 17
+
+For Boo\,II, we determine a total luminosity of $M_V = -2.9\pm 0.7$
+and half-light radius of $3.0 \pm 0.5'$ ($37 \pm 6$\,pc).  These
+values are within the 1-sigma errors of the same values computed by
+\citet{2008ApJ...688..245W} and \citet{2008ApJ...684.1075M}.  We
+redetermine the distance of Boo\,II using our deeper photometry and
+method described above, confirming the distance determined in
+\citet{2008ApJ...688..245W} of $42\pm8$, which is closer than in the
+\citet{2007ApJ...662L..83W} discovery paper.
+
+
+For the globular cluster Eri, we determine a total luminosity of $M_V
+= -4.9\pm 0.3$ and half-light radius of $r_{\rm eff} = 0.64'\pm0.04$
+($16.7 \pm 1.1$\,pc).  Our half-light radius of Eri is a factor of 2
+larger than the previously determined size based on significantly
+shallower Palomar Sky Survey plates \citep{ortolani86a, harris96a}.
+The photometric properties of both objects are listed in Table~1.
+
+
+\subsection{Target Selection}\label{subsec_targets}
+
+Target stars for Keck/DEIMOS spectroscopy were selected based on $g$-
+and $r$-band photometry.  In the case of Eri, we used the CFHT
+photometry described above.  For Boo\,II, target selection was done
+using the SDSS DR7, as the CFHT imaging was not available at the time.
+Because targets are only selected for spectroscopy down to $r =
+22$\,mag, the SDSS photometry was sufficient for this purpose.  Using
+the \citet{girardi02a} isochrones, we chose targets whose color and
+apparent magnitudes minimize the distance from the best fitting
+isochrone at the distance of each object.  The highest priority
+targets were those located within 0.1~mag of the RGB or AGB tracks, or
+within 0.2~mag of the MS and horizontal branch, with additional
+preference being given to brighter stars (see SG07 for details).
+Stars farther from any of the fiducial sequences were classified as
+lower priority targets. Slitmasks were created using the DEIMOS {\tt
+  dsimulator} package.
+
+
+
+\subsection{Spectroscopy and Data Reduction}\label{subsec_redux}
+
+Spectroscopy for individual stars in Boo\,II and Eri was obtained
+with the Keck~II 10-m telescope and the DEIMOS spectrograph
+\citep{faber03a}.  Five multislit masks were observed for Boo\,II on
+the nights of 2009 Febraury 19 and 28 and 2010 February 14, and two
+multislits masks were observed for Eri on 2010 February 13-14.
+Field positions and exposure times are listed in Table~2.  The masks
+were observed through the 1200~line~mm$^{-1}$ grating covering a
+wavelength region $6400-9100~\mbox{\AA}$.  The spatial scale is
+$0.12''$~per pixel, the spectral dispersion of this setup is
+$0.33~\mbox{\AA}$, and the resulting spectral resolution is
+$1.37~\mbox{\AA}$ (FWHM). Slitlets were $0.7''$ wide.  The minimum
+slit length was $5''$ to allow adequate sky subtraction; the minimum
+spatial separation between slit ends was $0.4''$ (three pixels).
+Spectra were reduced using a modified version of the {\tt spec2d}
+software pipeline (version~1.1.4) developed by the DEEP2 team at the
+University of California-Berkeley for that survey \citep{newman12a}.   A detailed
+description of the two-dimensional reductions can be found in SG07.
+The final one-dimensional spectra are rebinned into logarithmic
+wavelength bins with 15\,\kms\ per pixel.
+
+Radial velocities were measured by cross-correlating the observed
+science spectra with a set of high signal-to-noise stellar templates.
+The method is the same as that described in SG07 and briefly repeated
+here.  Stellar templates were observed with Keck/DEIMOS using the same
+setup as described in \S\,\ref{subsec_redux} and covering a wide range
+of stellar types (F8 to M8 giants, subgiants and dwarf stars) and
+metallicities ([Fe/H] = $-2.12$ to $+0.11$~dex).  We calculate and
+apply a telluric correction to each science spectrum by cross
+correlating a hot stellar template with the night sky absorption lines
+following the method in \citet{sohn06a}.  The telluric correction
+accounts for the velocity error due to mis-centering the star within
+the $0.7''$ slit caused by small mask rotations or astrometric errors.
+We apply both a telluric and heliocentric correction to all velocities
+presented in this paper.
+
+
+The random component of the velocity error is calculated using a Monte
+Carlo bootstrap method.  Noise is added to each pixel in the
+one-dimensional science spectrum, we then recalculate the velocity and
+telluric correction for 1000 noise realizations.  The random error is
+defined as the square root of the variance in the recovered mean
+velocity in the Monte Carlo simulations.  The systematic contribution
+to the velocity error was determined by SG07 to be 2.2\kms\ based on
+repeated independent measurements of individual stars, and has been
+subsequently confirmed with a much larger sample of repeated
+measurements.  We add the random and systematic errors in quadrature
+to arrive at the final velocity error for each science measurement.
+The fitted velocities were visually inspected to ensure reliability.
+
+
+\subsection{Repeat Velocity Measurements}
+
+We obtained repeated velocity measurements for a handful of stars in
+each system as a check on our systematic error and to possibily detect binary
+stars which might affect the velocity dispersion of these systems.  In
+Eri, we obtained repeat measurements only for two non-members stars
+separated by one day.  The measured velocities are within the
+one-sigma errors of each other.
+
+
+In Boo\,II, we obtain repeat measurements for 8 member stars.  Repeat
+observations are separated by as much as one year.  The most
+significant velocity variations was observed in the star SDSS
+J135807.04+125122.8 which varied by 20\kms\ in three measurements
+(3-sigma deviations).  The color, magnitude and amplitude of the
+velocity variation of this star is consistent with being an RR Lyrae
+star (Figure~\ref{fig_boocmd}).  We identify this star as a member of
+Boo\,II, but do not use it in our velocity analysis due to its
+uncertain systemic velocity.  Of the remaining seven member stars with
+repeat measurements, one star shows a velocity difference within
+2-sigma and the velocities of six stars are constant within one-sigma
+errors.  In these cases, we use the weighted averages of these
+multiple measurements.
+
+\citet{ji2015} identified the star  J135751.2+125137.0 as a
+spectroscopic binary system.   While we did not get repeat velocities for this object with DEIMOS, our measurement of this star is several sigma from the Boo\,II systematic velocity.   Removing this single star from the membership sample dramatically reduces the measured velocity dispersion of the overall system:  from $4.0\pm 1.0$\kms to the $2.0\pm1.2$\kms estimated in \S\,\ref{ssec_vdisp}.  Removal of no other single star influences the velocity dispersion by one sigma.  Therefore, we agree with the assessment of \citet{ji2015} and remove this object from our kinematic analysis below.
+
+  
+% this indeed reduces the velocity dispersion of the overall system...
+
+
+\subsection{Membership Selection Criteria} \label{ssec_members}
+
+Membership selection for both Boo\,II and Eri is based on combined
+photometric and kinematic criteria.  We first photometrically select
+stars based on the CFHT photometry to be within 0.2\,mag of the best
+fitting isochrone for each object.  For stars passing this photometric
+cut, we select members based on their radial velocity.  The velocity
+histograms in the right panel of Figures~\ref{fig_boocmd} and
+\ref{fig_ericmd} show clear velocity peaks well in excess of that
+predicted by models of the Besan\c con Milky Way at these velocities
+\citep{robin03a}.  We use this peak as the initial guess of the system's
+ systemic velocity and apply a generous velocity cut of 15\kms\ around
+this peak.  While this velocity window is three or more times the velocity
+dispersion, no stars passing both the CMD and kinematic cut are
+further than two sigma from the inferred velocity and we therefore do
+not further refine our selection criteria.  We note that the improved
+CFHT photometry substantially reduces the uncertainty in membership
+selection as compared to previous spectroscopic studies of comparable
+systems which used SDSS photometry \citep{simon07a,geha09a, simon11a}.
+
+The final samples for Boo\,II and Eri contain 22 and 32 member stars,
+respectively.  The color-magnitude and velocity distribution of
+kinematically-selected members are shown in Figures~\ref{fig_boocmd}
+and \ref{fig_ericmd}.  For stars identified as members of Boo\,II or
+Eri, the individual velocities and associated errors are listed in
+Table~3.
+
+%As a check on our selection method, we determine the expected number
+%of foreground stars in our photometrically selected samples and
+%compare this with the number of stars predicted for the Milky Way.
+%Using the Besacon Milky Way model \citep{robin03a}, we determined
+%[some things that need to be determined].
+
+
+
+
+\begin{deluxetable}{lcccc}
+\tabletypesize{\scriptsize}
+\tablecaption{Observed and Derived Quantities for Boo\,II and Eri}
+\tablewidth{0pt}
+\tablehead{
+\colhead{Row} & \colhead{Quantity} & \colhead{Units} & \colhead{Boo\,II} & \colhead{Eri}
+}
+\startdata
+(1) & RA          & h:m:s           & 13:58:03.4$\pm1.9$             & 04:24:44.5$\pm 0.1$\\
+(2) & DEC        & $^{\circ}: \> ': \> ''$ & +12:51:19$\pm21''$  & $-$21:11:15$\pm1.5''$\\ 
+(3) & E(B-V)     & mag             & 0.031                                     &  0.021  \\
+(4) & Dist        & kpc              & $42\pm8$                             & 90.1  \\
+(5) & $M_{V,0}$  & mag            & $-2.9\pm 0.7$                      & $-4.9\pm0.3$ \\
+(6) & $L_{V,0}$  & \Lsun          & $1614^{+406?}_{-235?}$             &  $9817^{+1187}_{-900}$  \\
+(7) & $\epsilon$&                  & $0.24\pm0.12$                    &  $0.09\pm0.04$ \\
+(8) & $\mu_{V,0}$ & mag $"^{-2}$ & $27.9^{+1.0}_{-0.7}$      &  $23.6$\\ 
+(9)  & $r_{\rm eff}$ & $'$          & $3.0\pm0.45$                     &   $0.64 \pm0.04$\\
+(10)  & $r_{\rm eff}$ & pc         & $37?\pm5.5$                        &   $16.7? \pm 1.1$\\ \hline
+(11)  & $v$         & \kms        & $-128.3\pm1.3$                  & $-18.3\pm 0.5$\\
+(12)  & $v_{\rm GSR}$  & \kms   & $114\pm2$                          &185\\
+(13)  & $\sigma$& \kms        & $4.3\pm1.2$                        & $< 0.7$\\ \hline
+(14)  & Mass     & \Msun        & $4.3^{+4.7}_{-2.5}\times10^5$ & \\
+(15)  & M/L      & \Msun/\Lsun  & $1340^{+4340}_{-990}$         &  \\
+(16)  & [Fe/H]   & dex                 & $-1.87\pm 0.17$              &  $-1.11\pm 0.04$   \\
+(16)  & $\sigma_{ [Fe/H]}$& dex    & $0.5\pm 0.1$                   &   $< 0.1$\\ 
+\enddata
+\tablecomments{Columns (1)-(2) and (4)-(10) dervied from CFHT imaging
+  as described in Munoz et al.  Column (3) from
+  \citet{schlegel98a}.  Columns
+  (11)-(13) are derived in xx.}
+\end{deluxetable} 
+
+
+
+%#Object		RA(deg)	   RA_er     DEC(deg)    DEC_er   PA   PA_er   Ell     Ell_er    ns      ns_er    Rh(')    Rh_er   Rh(pc)    Rh_er Back_den   Mg     Mg_er   Mr      Mr_er   Mv      Mv_er    Lv        mur_0   mur_e   mug_0    mug_e  dist 
+%    Eridanus  66.185325   0.000421 -21.187564   0.000409   35   25     0.09     0.04     1.18     0.14     0.64     0.04    16.77     1.05  0.186   -4.59    0.16   -5.15    0.21   -4.92    0.26   9.817e+03   23.01   25.22   23.57   25.78   90.1
+%   Bootes~II 209.514110   0.007737  12.855282   0.005930  -70   27     0.24     0.12     0.71     0.43     3.05     0.45    37.26     5.50  0.194   -2.55    0.31   -3.19    0.67   -2.92    0.74   1.614e+03   27.30   28.48   27.94   29.12   42.0
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Figure:  Boo2 plots
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure*}[t!]
+\epsscale{1.0}
+\plotone{fig_boocmd.eps}
+\caption{{\it Left:\/} Color-magnitude diagram of all stars (small
+  grey points) within $10'$ of the center of Boo\,II from CFHT
+  photometry.  The larger symbols indicate stars with measured
+  Keck/DEIMOS velocities:  red symbols fulfill our requirements
+  for membership in Boo\,II, large black symbols are foreground Milky
+  Way stars.  A fiducial isochrone \citep{girardi02a} is shown shifted to the distance of
+  Boo\,II.  {\it Right:\/} Velocity histogram of spectroscopic targets
+  for Boo\,II.  Selected member stars are shown in
+  red.\label{fig_boocmd}}
+\end{figure*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Figure:  Eri plots
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure*}[t!]
+\epsscale{1.0}
+\plotone{fig_ericmd.eps}
+\caption{Same as Figure~\ref{fig_boocmd} for the globular cluster
+  Eri.\label{fig_ericmd}}
+\end{figure*}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Figure:  SPATIAL plots
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure*}[t!]
+\epsscale{1.0}
+\plotone{fig_spatial.eps}
+\caption{{\it Left:\/} Spatial distribution of stars near Boo\,II.
+ Small points are all stars in this region, larger symbols indicate
+ stars with Keck/DEIMOS spectroscopy, with red symbols showing
+ confirmed members of Boo\,II.  The solid ellipse is the half-light
+ radius of this object.  {\it Right:\/} Same figure, but for the
+ globular cluster Eri.\label{fig_spatial}}
+\end{figure*}
+
+
+
+\section{Results} \label{sec_results}
+
+We have observed Eri and Boo\,II both photometrically and
+spectroscopically through identical observational
+setups, reduction and analysis tools.  The final member samples have comparable numbers
+of stars.  In addition to presenting the first velocity dispersion of
+the globular cluster Eri and a significantly improved measurement for
+the velocity dispersion of Boo\,II, a goal of this paper is to
+highlight the clear observational differences between globular
+clusters and ultra-faint galaxies in the region where the structural
+properties of these objects overlap.  
+
+%As seen in Figure~\ref{fig_sizeMV}, Eri and Boo\,II lie in a somewhat
+%similar region of total absolute magnitude-effective radius space.
+%The physical processes that set the
+
+
+
+
+\subsection{Velocities and Velocity Dispersions}\label{ssec_vdisp}
+
+Given the member stars identified in \S\,\ref{ssec_members}, we
+measure the mean velocity and velocity dispersion of Boo\,II and Eri
+using the MCMC algorithm described in \S\,\ref{ssec_mcmc}.  
+
+The mean heliocentric velocity of Boo\,II is determined to be $v =
+-129.0 \pm 1.1$\kms\ with a velocity dispersion of $\sigma = 4.4\pm
+1.0$\kms.  These values are in consistent with, but more accurate
+than, \citet{koch08a} who measured 5 velocities stars in this object.
+
+The mean heliocentric velocity of the globular cluster Eri is
+$v = -19.1\pm0.5$\kms.  This is consistent with published kinematic
+measurements of Eri of $v = -21 \pm 4$\kms\ based on three stars
+\citep{zaritsky89a}.  From our full member sample of 32 stars, we find
+a mean velocity dispersion of $1.5\pm0.8$\kms.  While the internal
+dispersion of this cluster has not been previously measured, our value
+agrees with the velocity dispersion predicted by \citet{gnedin02a} of
+1.3\kms, based its photometric properties: a single-mass isotropic
+King models with a constant mass-to-light ratio $M/L_V = 3$.  We
+discuss the dynamical mass and mass-to-light ratio of Eri further
+below.
+
+
+\subsection{Mass and Mass-to-Light Ratio}\label{ssec_mass}
+
+We determine the dynamical mass of Boo\,II and Eri enclosed within the
+half-light radius applying the formula from \citet{wolf10a}:
+$M_{1/2}(\rm r_{\rm 1/2}) \simeq 4G^{-1}\langle \sigma_{\rm los}^2
+\rangle \rm r_{\rm 1/2}$, where $M_{1/2}$ is the mass contained within
+the 3D projected half-light radius, $\sigma_{\rm los}$ is the
+line-of-sight velocity dispersion.  This mass estimator is based on
+the Jeans Equation and is less sensitive to uncertainties in the
+velocity anisotropy than other simple mass estimates.  We calculated
+an enclosed mass for Boo\,II of $M_{1/2} = 6.5^{+x}_{-x} \times 10^5
+\Msun$ and Eri of $M_{1/2} = 1.3^{+2.7}_{-1.3} \times 10^3 \Msun$.   
+
+
+Using the luminosity determined in \S\,\ref{ssec_struct}, we determine
+the dynamical mass-to-light ratio for each object.  Starting with Eri,
+we calculate a mass-to-light ratio = $\Upsilon_V =2.4^{+5.0}_{-2.4}
+\Msun/\Lsun$.   Based on a single age old stellar population
+consistent with the metallicity of Eri ([Fe/H] = $x$), we expect a
+mass-to-light ratio between 2-3.   Inverting the Wolf et al.~formula,
+we would predict a velocity dispersion between x and y based on the
+stellar mass alone.   Our observations are fully consistent with the
+conclusion that Eri is a globular cluster whose stellar mass is
+consistent with its dynamical mass.
+
+For Boo\,II, we calculate $\Upsilon_V =2.4^{+5.0}_{-2.4} \Msun/\Lsun$.
+This is well in excess of the mass-to-light ratio expected for any
+stellar population.  Again inverting the Wolf et al.~formula using a
+reasonable stellar mass-to-light ratio, we predict a velocity
+dispersion of xx, several sigma below our measurements.  Thus, while
+the dynamical mass of Eri is consistent with its stellar mass, we
+infer a significant amount of dark matter in Boo\,II.
+
+The above statement assumes both systems are in dynamical
+equilibrium.  [look at any possible tidal effects].
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Figure:  METAL plots
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\epsscale{1.0}
+\plotone{fig_metals.eps}
+\caption{Metalicity distribution of member stars in Eri ({\it top})
+  and Boo\,II ({\it bottom}).  The globular cluster Eri is consistent
+  with a single metallicity stellar population with [Fe/H] $=-1.11 \pm
+  0.04$, while the ultra-faint galaxy Boo\,II has a significant
+  internal metallicity dispersion ($\sigma = 0.5 \pm 0.1$\,dex) with
+  an average of [Fe/H]=$-1.87\pm 0.17$.  \label{fig_metals}}
+\end{figure}
+
+
+
+
+\subsection{Metallcity Distributions}\label{ssec_tides}
+
+We estimate the spectroscopic metallicity of individual stars in our
+member samples via the spectral synthesis modeling method desribed in
+\citet{kirby08a}.  This method compares the observed spectrum to a
+grid of synthetic spectra covering a range of effective temperature,
+surface gravity and composition.  Photometry is used to estimate
+effective temperature and surface gravity for each star.  The best
+matching composition is found by minimizing residuals between the
+observed spectrum and a smoothed synthetic spectrum matched to the
+DEIMOS spectral resolution.  Although it is possible to determine both
+[Fe/H] and [$\alpha$/Fe] via this method, we focus on only [Fe/H] in
+this paper.  We mask $\alpha$ element lines and fix the model
+atmospheres at [$\alpha$/Fe] = $+0.2$.
+
+The metallicity distribution for Boo\,II and Eri are shown in
+Figure~\ref{fig_metals}.  For Boo\,II, we determine an average
+metallicity of [Fe/H] = $-1.87\pm0.17$ with and internal dispersion of
+$0.5\pm0.1$\,dex.  For Eri, we determine an average metallicity of
+[Fe/H] = $-1.11\pm 0.04$ with no internal dispersion.  This is
+consistent with the interpretation that Eri is a globular cluster with
+a single stellar population, while Boo\,II is a galaxy with multiple
+metallicity populations.
+
+ Deep photometry of this object suggests a
+metallicity of [Fe/H] = $-1.42$ \citep{stetson99a}, which agrees with
+the spectroscopic metallicity determined for two stars of
+[Fe/H]$=-1.41\pm 0.11$ \citep{armandroff91a}.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Figure: Velocity
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure*}[t!]
+\epsscale{0.8}
+\plotone{fig_sizeMV.eps}
+\caption{The absolute magnitude ($M_V$) versus half-light radius
+  ($R_{\rm eff}$) for Milky Way dSphs (circles) and globular clusters
+  (triangles) in the outer halo (dist $> 20$\,kpc).  These systems are
+  well separated for magnitudes brighter than $M_V< -5$,
+  but overlap at the faintest magnitudes.  The names of the globular
+  clusters and ultra-faint dwarf galaxies near this overlap region are
+  listed.  Large red symbols indicate the position of the objects
+  studied in this work, Boo\,II and Eridanus.  \label{fig_sizeMV}}
+\end{figure*}
+
+
+
+
+\section{Discussion and Conclusions}\label{sec_disc}
+
+The radial velocity of Boo\,II
+is significantly different than that of another ultra-faint galaxy
+Bo\"otes\,I which lies less than $2^{\circ}$ ( away, but at a velocity of $96
+\pm$\kms \citep{munoz06a}.  Thus, as first suggested by Koch et al.,
+Bo\"otes\,I and Boo\,II are not physically associated with each other.
+
+%in constrast to Leo 4/5 \citep{blana12a}
+
+
+\acknowledgments
+
+
+%% The reference list follows the main body and any appendices.
+%% Use LaTeX's thebibliography environment to mark up your reference list.
+%% Note \begin{thebibliography} is followed by an empty set of
+%% curly braces.  If you forget this, LaTeX will generate the error
+%% "Perhaps a missing \item?".
+%%
+%% thebibliography produces citations in the text using \bibitem-\cite
+%% cross-referencing. Each reference is preceded by a
+%% \bibitem command that defines in curly braces the KEY that corresponds
+%% to the KEY in the \cite commands (see the first section above).
+%% Make sure that you provide a unique KEY for every \bibitem or else they
+%% paper will not LaTeX. The square brackets should contain
+%% the citation text that LaTeX will insert in
+%% place of the \cite commands.
+
+%% We have used macros to produce journal name abbreviations.
+%% AASTeX provides a number of these for the more frequently-cited journals.
+%% See the Author Guide for a list of them.
+
+%% Note that the style of the \bibitem labels (in []) is slightly
+%% different from previous examples.  The natbib system solves a host
+%% of citation expression problems, but it is necessary to clearly
+%% delimit the year from the author name used in the citation.
+%% See the natbib documentation for more details and options.
+
+
+
+\bibliographystyle{../tex_files/apj}
+
+\bibliography{../tex_files/apj-jour,references}
+
+
+
+
+\clearpage
+
+
+
+\begin{deluxetable}{lcrccccc}\label{table_mask}
+\tabletypesize{\scriptsize}
+\tablecaption{Keck/DEIMOS Multi-Slitmask Observing Parameters}
+\tablewidth{0pt}
+\tablehead{
+\colhead{Mask} &
+\colhead{$\alpha$ (J2000)} &
+\colhead{$\delta$ (J2000)} &
+\colhead{Date Observed} &
+\colhead{PA} &
+\colhead{$t_{\rm exp}$} &
+\colhead{\# of slits} &
+\colhead{\% useful} \\
+\colhead{Name}&
+\colhead{(h$\,$:$\,$m$\,$:$\,$s)} &
+\colhead{($^\circ\,$:$\,'\,$:$\,''$)} &
+\colhead{} &
+\colhead{(deg)} &
+\colhead{(sec)} &
+\colhead{}&
+\colhead{spectra}
+}
+\startdata
+Boo2\_1  & Feb 19, 2009 & 13:58:04.6  & 12:50:41.4  &  91  & 1800 &   41 &  93\% \\
+Boo2\_2  & Feb 19, 2009 & 13:58:01.2  & 12:50:52.1  & 177 & 7200 &   87 &  64\% \\
+Boo2\_3  & Feb 28, 2009 & 13:57:57.4  & 12:49:36.9  & 46   & 7200 &   74 & 54\% \\
+Boo2\_4  & Feb 19, 2009 & 13:58:29.3  & 12:44:38.3  & 44   & 1500 &  35  & 94\% \\
+Boo2\_5  & Feb 13, 2010  & 13:58:12.7  & 12:50:53.9  &  0    &  3600 & 124 & 72\% \\
+Eri\_1     &  Feb 13, 2010  & 04:24:46.2  & $-$21:12:25.0 & 0   &   3600 & 64  & 75\% \\
+Eri\_2     &  Feb 14, 2010 & 04:24:50.4  & $-$21:11:02.2 & 90 &   4800  & 64  &  61\% 
+\enddata
+\end{deluxetable} 
+
+
+
+\begin{deluxetable}{lccccccccc}\label{tab_properties}
+\tabletypesize{\scriptsize}
+\tablecaption{Keck/DEIMOS Velocity Measurements for Member Stars in Boo\,II and Eri}
+\tablewidth{0pt}
+\tablehead{
+\colhead{i} &
+\colhead{Name} &
+\colhead{$\alpha$ (J2000)} &
+\colhead{$\delta$ (J2000)} &
+\colhead{$g$} &
+\colhead{$(g-r)$} &
+\colhead{$v$} &
+\colhead{$v_{\rm err}$} &
+\colhead{$v_{\rm gsr}$} \\
+\colhead{}&
+\colhead{}&
+\colhead{h$\,$ $\,$ m$\,$ $\,$s} &
+\colhead{$^\circ\,$ $\,'\,$ $\,''$} &
+\colhead{mag} &
+\colhead{mag} &
+\colhead{\kms} &
+\colhead{\kms} &
+\colhead{\kms} &
+}
+\startdata
+\multicolumn{9}{c}{{\bf Boo\,II Members}}\\
+ 1 &  3451635   &     10:06:40.5 &    +16:02:38.1 &     22.0 &    0.36 &    204.1 &      6.4 &    109.2 \\
+ 2 &  3451345   &     10:06:44.5 &    +16:01:29.4 &     20.7 &    0.27 &    210.5 &      4.0 &    115.5 \\
+ 3 &  3451159   &     10:06:44.6 &    +15:59:53.9 &     17.3 &   -0.01 &    200.4 &      2.2 &    105.5 \\
+..   &     ..     &         ..      &         ..      &       ..  &   ..     &       ..  &      ..  &     ..    \\
+\hline \\
+\multicolumn{9}{c}{{\bf Eri Members}}\\
+1   &  3451597   &     10:06:34.8 &    +15:59:48.8 &     21.6 &    0.78 &   -161.5 &      2.9 &   -256.5 \\
+2   &  3451324   &     10:06:35.5 &    +16:02:21.1 &     17.7 &    0.88 &      1.4 &      2.2 &    -93.5 \\
+3   &  3451835   &     10:06:36.3 &    +16:02:46.3 &     23.2 &    1.22 &    -21.2 &      2.7 &   -116.1 \\
+..   &     ..     &         ..      &         ..      &       ..  &   ..     &       ..  &      ..  &     ..    
+\enddata
+\tablecomments{Velocity measurements for member stars in the
+  ultra-faint galaxy Boo\,II and globlar cluster Eri.  We list
+  the heliocentric radial velocity ($v$), velocity error ($v_{\rm
+    err}$), and Galactocentric velocity ($v_{\rm gsr}$) for each star
+  as determined in xx.  Entries for non-members are
+  published in their entirety in the electronic edition of the {\it
+    Astrophysical Journal}.  }
+\end{deluxetable} 
+
+
+
+
+\clearpage
+%% Use the figure environment and \plotone or \plottwo to include 
+%% figures and captions in your electronic submission.
+
+
+
+
+
+%% If you are not including electonic art with your submission, you may
+%% mark up your captions using the \figcaption command. See the 
+%% User Guide for details.
+%%
+%% No more than seven \figcaption commands are allowed per page, 
+%% so if you have more than seven captions, insert a \clearpage 
+%% after every seventh one. 
+
+\end{document}
