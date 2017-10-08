@@ -1,0 +1,100 @@
+
+
+          CATALOG OF PARAMETERS FOR MILKY WAY GLOBULAR CLUSTERS:
+                           THE DATABASE
+
+            Compiled by William E. Harris, McMaster University
+                   This revision:  December 2010
+
+********************************************************************************
+
+                        COPYRIGHT NOTICE!
+
+        THE DATA IN THIS CATALOG ARE SUPPLIED FREE OF CHARGE TO
+ALL USERS.  ANY THIRD PARTY WHO SUPPLIES THIS CATALOG IN TURN TO
+OTHER USERS MUST REFER TO THE ORIGINAL SOURCE, WHICH IS THIS WEBSITE,
+AND MUST DO SO WITHOUT CHARGE OF ANY FEE.
+
+*******************************************************************************
+
+        This catalog contains basic parameters on distances, velocities,
+metallicities, luminosities, colors, and dynamical parameters
+for 157 objects classified as globular clusters in the Milky Way galaxy.
+
+The data are presented in three parts, with quantities as defined below.
+A complete list of source references and an explanation of the quantities,
+along with their calibration information, is given in the companion
+"Bibliography" file accessible through the WorldWideWeb from either of
+the following links:
+
+http://www.physics.mcmaster.ca/resources/globular.html
+http://physwww.mcmaster.ca/%7Eharris/WEHarris.html
+
+        Please acknowledge the use of this catalog in any published work
+you derive from it.  The proper citation is the original paper
+
+        Harris, W.E. 1996, AJ, 112, 1487
+
+which briefly describes the setup of the catalog.  When you cite it in your
+text, please use "Harris 1996 (2010 edition)".
+        I would also greatly appreciate receiving any new information,
+in published or preprint form, which would help me keep the list up to date.
+Please also tell me about published data that I may have missed.  Thanks!
+
+                        W. E. Harris
+                        (harris@physics.mcmaster.ca)
+
+
+THIS CATALOG IS IN THREE SECTIONS:
+
+        PART I:    Cluster identifications and positions
+        PART II:   Metallicities, Integrated magnitudes, colors, 
+        PART III:  Radial velocities, velocity dispersions, structural parameters
+
+___________________________________________________________________________
+
+Part I:  Identifications and Positional Data
+
+Key to columns:
+(1) Cluster identification number
+(2) Other commonly used cluster name
+(3,4) Right ascension and declination (epoch J2000)
+(5,6) Galactic longitude and latitude (degrees)
+(7) Distance from Sun (kiloparsecs)
+(8) Distance from Galactic center (kpc), assuming R_0=8.0 kpc
+(9-11) Galactic distance components X,Y,Z in kiloparsecs, in a
+    Sun-centered coordinate system; X points toward Galactic center, 
+    Y in direction of Galactic rotation, Z toward North Galactic Pole
+
+Part II:  Metallicity and Photometry
+
+Key to columns:
+(1) Cluster identification
+(2) Metallicity [Fe/H]
+(3) Weight of mean metallicity; essentially the number of independent [Fe/H]
+	measurements averaged together.  See bibliography for full description
+(4) Foreground reddening
+(5) V magnitude level of the horizontal branch (or RR Lyraes)
+(6) Apparent visual distance modulus
+(7) Integrated V magnitude of the cluster
+(8) Absolute visual magnitude (cluster luminosity),  M_V,t = V_t - (m-M)V
+(9-12) Integrated color indices (uncorrected for reddening)
+(13) Spectral type of the integrated cluster light
+(14) Projected ellipticity of isophotes, e = 1-(b/a)
+
+Part III:  Velocities and Structural Parameters
+
+Key to columns:
+(1) Cluster identification
+(2) Heliocentric radial velocity (km/s)
+(3) Observational (internal) uncertainty in radial velocity
+(4) Radial velocity relative to Solar neighborhood LSR
+(5) Central velocity dispersion sig_v (km/s)
+(6) Observational (internal) uncertainty in velocity dispersion
+(7) King-model central concentration, c = log(r_t/r_c); a 'c' denotes a core-collapsed cluster
+(8) Core radius in arcmin
+(9) Half-light radius in arcmin
+(10) Central surface brightness, V magnitudes per square arcsecond
+(11) Central luminosity density, log_10(Solar luminosities per cubic parsec)
+(12) Core relaxation time t(r_c), in log_10(years)
+(13) Median relaxation time t(r_h), in log_10(years)
