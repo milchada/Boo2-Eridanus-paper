@@ -1,1 +1,2 @@
-This repo reproduced measurements of dynamical mass in two systems in the local group, Bootes 2 and Eridanus. The mass measurements use spectra from the Keck and CFHT telescopes, assume virial equlibrium, and then use MCMC parameter estimation.
+This repo reproduced measurements of dynamical mass in two systems in the local group, Bootes 2 and Eridanus. The distance to each object is measured using the colour-magnitude diagram, fit with isochrones from Bruzual and Charlot (2003). 
+Then, the mass is measured using spectra from the Keck and CFHT telescopes, assuming virial equlibrium, and using MCMC parameter estimation (Forman-Mackey+ 2012).
